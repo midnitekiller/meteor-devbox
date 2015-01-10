@@ -9,7 +9,7 @@ Vagrant.require_version '>= 1.5.0'
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
-  config.omnibus.chef_version = :latest
+  # config.omnibus.chef_version = :latest
   config.berkshelf.enabled = true
   config.cache.auto_detect = true
   config.cache.scope = :machine
@@ -42,7 +42,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     chef.run_list = [
 
-      # 'recipe[meteor-devbox::default]'
+      'recipe[apt]',
+      'recipe[build-essential]',
+      'recipe[git]',
+      'recipe[vim]',
+      'recipe[apache2]',
+      'recipe[meteor]'
+      
     ]
   end
 

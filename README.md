@@ -1,17 +1,10 @@
 # Intoduction
 
-This cookbook deploys a LAMP stack with Ioncube loader for zend framework to deploy the aMember application.
-
+This is a meteor devbox
 # Getting Started
 
-This cookbook works with precise64 with chef version 11 and up.
 
-To get started simply clone the repo and run the following commands to configure the project
 
-```
-$ bundle install
-$ berks install
-```
 
 # Requirements 
 

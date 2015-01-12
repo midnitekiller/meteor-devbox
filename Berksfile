@@ -1,12 +1,15 @@
 source "https://supermarket.getchef.com"
 
-metadata
+# metadata
 
 cookbook 'meteor'
-cookbook 'apache2'
-cookbook 'nodejs'
-cookbook 'apt'
 cookbook 'build-essential'
-
-
-
+cookbook 'apt'
+cookbook 'nginx'
+cookbook 'nodejs'
+cookbook 'git'
+cookbook 'vim'
+cookbook 'curl'
+cookbook 'elasticsearch', github: 'elasticsearch/cookbook-elasticsearch'
+cookbook 'java'
+cookbook 'monit'

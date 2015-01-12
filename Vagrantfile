@@ -31,14 +31,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         server_root_password: 'rootpass',
         server_debian_password: 'debpass',
         server_repl_password: 'replpass'
+      },
+
+      java: {
+        install_flavor: 'openjdk',
+        jdk_version: '7'
+      },
+
+      elasticsearch: {
+       cluster: { 
+          name: 'elasticsearch_test_chef' 
+          }
       }
     }
-    chef.add_recipe "apt"
-    chef.add_recipe "build-essential"
-    chef.add_recipe "git"
-    chef.add_recipe "vim"
-    chef.add_recipe "apache2"
-    chef.add_recipe "meteor"
 
     chef.run_list = [
 
@@ -46,9 +51,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       'recipe[build-essential]',
       'recipe[git]',
       'recipe[vim]',
-      'recipe[apache2]',
-      'recipe[meteor]'
-      
+      'recipe[nginx]',
+      'recipe[meteor]',
+      'recipe[java]',
+      'recipe[elasticsearch]',
+      'recipe[elasticsearch::proxy]',
+      #'recipe[elasticsearch::search_discovery]',
+      #'recipe[elasticsearch::aws]',
+      'recipe[elasticsearch::monit]'
     ]
   end
 

@@ -2,7 +2,7 @@
 
 This is a meteor devbox
 
-Testing phase..  asdfsadf
+Testing phase.. 
 # Getting Started
 
 
